@@ -2,6 +2,8 @@ package com.example.movies.controller;
 
 import com.example.movies.service.MovieService;
 
+import io.swagger.v3.*;
+
 import com.example.movies.model.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,11 +18,6 @@ public class MovieController {
     @Autowired
     private MovieService movieService;
 
-    // @PostMapping
-    // public ResponseEntity<Movie> createMovie(@RequestBody Movie movie) {
-    //     return ResponseEntity.ok(movieService.saveMovie(movie));
-    // }
-
     @GetMapping
     public ResponseEntity<List<Movie>> getAllMovies() {
         return ResponseEntity.ok(movieService.getAllMovies());
@@ -31,15 +28,15 @@ public class MovieController {
         return ResponseEntity.ok(movieService.getMovieById(id));
     }
 
-    // @PutMapping("/{id}")
-    // public ResponseEntity<Movie> updateMovie(@PathVariable Long id, @RequestBody Movie movie) {
-    //     return ResponseEntity.ok(movieService.updateMovie(id, movie));
-    // }
+    @GetMapping("/s/{title}")
+    public ResponseEntity<Movie> getMovieByTitle(@PathVariable String title) {
+        return ResponseEntity.ok(movieService.getMovieByTitle(title));
+    }
 
-    // @DeleteMapping("/{id}")
-    // public ResponseEntity<Void> deleteMovie(@PathVariable Long id) {
-    //     movieService.deleteMovie(id);
-    //     return ResponseEntity.noContent().build();
-    // }
+    @PostMapping
+    public ResponseEntity<Movie> getAllRefreshedMovies(@RequestBody Movie movie) {
+        return ResponseEntity.ok(movieService.getAllRefreshedMovies(movie));
+    }
+
     
 }

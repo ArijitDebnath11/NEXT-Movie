@@ -1,0 +1,269 @@
+/* src/styles.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: black;
+}
+
+nav {
+    background-color: #060606;
+    padding: 10px 5px;
+    display: flex;
+    justify-content: flex-end;
+    /* color: black; */
+    height: 80px;
+    border-bottom: 1px solid #fff4f4;
+    position: relative;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    
+}
+.heading-nav{
+    color: #fff;
+    position: absolute;
+    left: 5%;
+    font-size: 30px;
+    top: 20px;
+}
+
+nav ul li {
+    /* margin: 0 10px; */
+   
+
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    border: none!important;
+    font-size: 20px;
+    margin-top: -20px!important;
+    font-family: "Poppins", sans-serif;
+
+
+}
+
+nav input {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+nav button {
+    padding: 5px 10px;
+    background-color: #ff6f61;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+h1 {
+    color: #333;
+}
+
+.container {
+    padding: 20px;
+}
+
+.search-results {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+.grid-4-col {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column;
+    }
+}
+@media (max-width: 1200px) {
+    .container {
+      margin: auto;
+      max-width: 110rem;
+    }
+    .grid-4-col {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  
+  @media (max-width: 998px) {
+    .container {
+      max-width: 90rem;
+      margin: auto;
+    }
+    .grid-4-col {
+      grid-template-columns: 1fr 1fr;
+    }
+    input {
+        width: 25rem;
+      }
+    }
+    /* src/styles.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  :root {
+    --text-clr:black;
+    --bg-clr: #f2f4fc;
+    --border-clr: rgb(156, 176, 193);
+  }
+  
+  html {
+    font-size: 62.5%;
+  }
+  
+  body {
+    background-color: var(--bg-clr);
+  }
+  
+  h2 {
+    font-family: "Lora", serif;
+    color: var(--text-clr);
+    font-size: 2rem;
+    transition: all 0.5s linear;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  img {
+    min-width: 10rem;
+    max-height: 30rem;
+    margin: 1rem 0;
+    border-radius: 1rem;
+    transition: all 0.3s linear;
+  }
+  
+  .container {
+    max-width: 140rem;
+    margin: auto;
+    padding: 3rem;
+  }
+  
+  .grid {
+    display: grid;
+    gap: 3rem;
+    background-color: #060606;
+  }
+  
+  .grid-4-col {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .card {
+    width: 25rem;
+    max-width: 30rem;
+    min-height: 30rem;
+    border-radius: 1rem;
+  
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+  }
+  .card-info{
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+  }
+  
+  
+  a {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    padding: 3.2rem 1rem;
+    color: var(--text-clr);
+    border: 0.2rem solid var(--text-clr);
+    font-size: 1.8rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s linear;
+  }
+  
+  a:hover {
+    background-color: #ffffff;
+    color: var(--bg-clr);
+  }
+  
+  a:hover h2 {
+    color: var(--bg-clr);
+    transform: translateY(-1.5rem);
+    display: inline-block;
+  }
+  
+  a:hover img {
+    transform: scale(1.1);
+  }
+  
+  .back-btn {
+    padding: 1.2rem 3.6rem;
+  }
+  
+  @media (max-width: 1200px) {
+    .container {
+      margin: auto;
+      max-width: 110rem;
+    }
+    .grid-4-col {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  
+  @media (max-width: 998px) {
+    .container {
+      max-width: 90rem;
+      margin: auto;
+    }
+    .grid-4-col {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    input {
+      width: 25rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      max-width: 70rem;
+      margin: auto;
+    }
+    .grid-4-col {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.som{
+  height: 500px;
+  width:100%;
+  background-color: #060606;
+}

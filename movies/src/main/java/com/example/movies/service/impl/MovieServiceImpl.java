@@ -13,18 +13,6 @@ public class MovieServiceImpl implements MovieService {
 
     @Autowired
     private MovieRepository movieRepository;
-
-    // @Override
-    // public Movie saveMovie(Movie movie) {
-    //     return movieRepository.save(movie);
-    // }
-    // public List<Movie> findMoviesWithLowestPriceForEachTitle() {
-    //     List<Movie> allMovies = movieRepository.findAll();
-    //     System.out.println(allMovies);
-    //     List<Movie> filteredMovies = modify(allMovies);
-
-    //     return filteredMovies;
-    // }
     public List<Movie> modify(List<Movie>movies){
         Map<String,Movie> movieMap=new HashMap<>();
         for (Movie movie : movies) {
@@ -48,24 +36,6 @@ public class MovieServiceImpl implements MovieService {
             movie.setPrice(newPrice);
         }
     }
-    // public List<Movie> modify(List<Movie>movie){
-    //     Map<String,Movie> movieMap=new HashMap<>();
-    //     for (Movie m : movie) {
-    //         String t1=m.getTitle();
-    //         if (!movieMap.containsKey(t1) || m.getPrice() < movieMap.get(t1).getPrice()) {
-    //             movieMap.put(t1, m);
-    //         }
-
-    //         double currentPrice = m.getPrice();
-    //         int ratings = m.getRatings();
-
-    //         double newPrice = currentPrice +(currentPrice * (ratings * 0.1)); 
-    //         m.setPrice(newPrice);
-    //     }
-    //     List<Movie> result = new ArrayList<>(movieMap.values());
-
-    //     return result;
-    // }
     @Override
     public List<Movie> getAllMovies() {
         List<Movie>movie=new ArrayList<>();
@@ -87,23 +57,17 @@ public class MovieServiceImpl implements MovieService {
             throw new RuntimeException("Movie not found for id: " + id);
         }
     }
-
-    // @Override
-    // public Movie updateMovie(Long id, Movie movieDetails) {
-    //     Movie movie = getMovieById(id);
-
-    //     movie.setTitle(movieDetails.getTitle());
-    //     movie.setRatings(movieDetails.getRatings());
-    //     movie.setPrice(movieDetails.getPrice());
-    //     movie.setVendors(movieDetails.getVendors());
-    //     movie.setImages(movieDetails.getImages());
-
-    //     return movieRepository.save(movie);
-    // }
-
-    // @Override
-    // public void deleteMovie(Long id) {
-    //     Movie movie = getMovieById(id);
-    //     movieRepository.delete(movie);
-    // }
+    @Override
+    public Movie getMovieByTitle(String title){
+        Optional<Movie> movie = movieRepository.getMovieByTitle(title);
+        if (movie.isPresent()) {
+            return movie.get();
+        } else {
+            throw new RuntimeException("Movie not found for id: " + title);
+        }
+    }
+    @Override
+    public Movie getAllRefreshedMovies(Movie movie){
+        return movieRepository.save(movie);
+    }
 }

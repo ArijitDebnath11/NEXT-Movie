@@ -1,0 +1,103 @@
+.single-movie-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #060606; /* Darker background color */
+    color: #f0f0f0; /* Lighter text color */
+  }
+  
+  .single-movie-details {
+    background-color: #ffffff; /* Darker background color for the details */
+    padding: 2rem 7rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Increased box shadow */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for hover effect */
+  }
+  
+  .single-movie-details:hover {
+    transform: translateY(-10px); /* Move the card up on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Increase box shadow on hover */
+  }
+  
+  .image-gallery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    position: relative;
+    /* background-color: red; */
+    padding: 40px 30px;
+  }
+  
+  .prev-btn {
+    background-color: black;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 2px;
+    cursor: pointer;
+    margin: 0 0.5rem;
+    position: absolute;
+    bottom: 0px;
+    left: 25px;
+    transition: background-color 0.3s ease; /* Transition for hover effect */
+  }
+  
+  .next-btn {
+    background-color: black;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 2px;
+    right: 25px;
+    bottom: 0px;
+    cursor: pointer;
+    margin: 0 0.5rem;
+    position: absolute;
+    transition: background-color 0.3s ease; /* Transition for hover effect */
+  }
+  
+  .prev-btn:hover,
+  .next-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .card-info h3, h2,h4,h5{
+    font-size: 18px;
+    color: #fff!important;
+    /* font-style: Poppins; */
+  }
+  .card-info img {
+    width: 100%;
+    /* position: absolute; */
+    height: 100%;
+    left: 5%;
+    padding: 10px;
+
+    /* margin: 0 1rem; */
+    border-radius: 4px; /* Add border radius to the image */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Add box shadow to the image */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for hover effect */
+  }
+  .abc{
+    color: #000!important;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .title{
+    font-size: 30px;
+    font-family: "Poppins", sans-serif;
+
+  }
+  .image-gallery img{
+    margin-bottom: 20px;
+
+  }
+  img:hover {
+    transform: scale(1.05); /* Slightly scale up the image on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Increase box shadow on hover */
+  }
