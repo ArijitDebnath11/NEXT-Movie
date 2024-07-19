@@ -4,6 +4,7 @@ import '../AboutUs.css';
 
 const AboutUs = () => {
   return (
+    <div className='s'>
     <div className="about-us-container">
       <h1>About Us</h1>
       <p>
@@ -26,6 +27,7 @@ const AboutUs = () => {
         you with the best movie experience possible. If you have any feedback or
         suggestions, please don't hesitate to reach out to us!
       </p>
+    </div>
     </div>
   );
 };

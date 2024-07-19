@@ -3,6 +3,9 @@ package com.example.movies.service.impl;
 import com.example.movies.model.Movie;
 import com.example.movies.repository.MovieRepository;
 import com.example.movies.service.MovieService;
+
+import aj.org.objectweb.asm.commons.Method;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,7 +35,8 @@ public class MovieServiceImpl implements MovieService {
             double currentPrice = movie.getPrice();
             int ratings = movie.getRatings();
 
-            double newPrice = currentPrice +(currentPrice * (ratings * 0.1)); 
+            double newPrice = Math.round((currentPrice +(currentPrice * (ratings * 0.1)))*100D)/100D; 
+
             movie.setPrice(newPrice);
         }
     }

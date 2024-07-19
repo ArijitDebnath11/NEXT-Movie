@@ -140,7 +140,7 @@ h1 {
   h2 {
     font-family: "Lora", serif;
     color: var(--text-clr);
-    font-size: 2rem;
+    font-size: 18px;
     transition: all 0.5s linear;
   }
   
@@ -177,7 +177,7 @@ h1 {
     max-width: 30rem;
     min-height: 30rem;
     border-radius: 1rem;
-  
+    padding: 10px 50px;
     display: flex;
     position: relative;
     justify-content: center;
@@ -204,9 +204,12 @@ h1 {
     transition: all 0.3s linear;
   }
   
-  a:hover {
-    background-color: #ffffff;
+  .card:hover {
+    /* background-color: #474a54; */
     color: var(--bg-clr);
+    transition: 0.3s;
+    transform: scale(1.03, 1.03);
+    box-shadow: inset 0 0 10px rgba(209, 202, 202, 0.7);
   }
   
   a:hover h2 {
